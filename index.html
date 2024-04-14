@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<script>
+		setInterval(timer,1000);
+		function timer()
+			{
+				var time=new Date();
+				var hour = time.getHours();
+				var minute = time.getMinutes();
+				var second = time.getSeconds();
+				var meridiem;
+				if(hour<=11)
+					meridiem = "AM";
+				else
+					{	
+						meridiem = "PM";
+						hour=hour-12;
+					}
+				if(parseInt(hour)<10)
+					hour="0"+hour;
+				if(parseInt(minute)<10)
+					minute="0"+minute;
+				if(parseInt(second)<10)
+					second="0"+second;
+				document.getElementById("hr").innerHTML=hour;
+				document.getElementById("min").innerHTML=minute;
+				document.getElementById("sec").innerHTML=second;
+				document.getElementById("mrd").innerHTML=meridiem;
+			};
+	</script>
+	<title>Digital Clock</title>
+</head>
+<body bgcolor="#5cc3fb">
+	<h1 align="center">Digital Clock</h1>
+	<br><br>
+	<center><div style="border:5px solid black;width:40%;margin:auto;padding:50px 0;font-size:30px;background-color:#3e9acb">
+		<p id="hr" style="display:inline"></p>&nbsp;:&nbsp;
+		<p id="min" style="display:inline"></p>&nbsp;:&nbsp;
+		<p id="sec" style="display:inline"></p>
+		<p id="mrd" style="display:inline"></p>
+	</div></center>
+<body>
